@@ -7,6 +7,7 @@
     --light-grey: hsl(217, 12%, 63%);
     --medium-grey: hsl(216, 12%, 54%);
     --dark-blue: hsl(213, 19%, 18%);
+    --lighter-dark-blue: rgb(57, 69, 84);
     --very-dark-blue: hsl(216, 12%, 8%);
 }
 
@@ -27,9 +28,11 @@ body {
     height: 100vh;
 }
 
+
+
 .container {
     width: 350px;
-    height: 380px;
+    height: 390px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,14 +41,16 @@ body {
     background-color: var(--dark-blue);
 }
 
-.rating {}
+.rating {
+    display: none;
+}
 
 .rating .star {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid white;
-    background-color: var(--dark-blue);
+    /* border: 1px solid white; */
+    background-color: var(--lighter-dark-blue);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,9 +71,60 @@ body {
     line-height: 22px;
 }
 
-.container.thanks {
-    display: none;
+.ratenum {
+    margin: 20px 20px;
 }
+
+.ratenum ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.ratenum ul li {
+    display: block;
+    list-style: none;
+    line-height: 40px;
+    text-align: center;
+    background-color: var(--lighter-dark-blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--light-grey);
+    cursor: pointer;
+    transition: .4s;
+}
+
+.ratenum ul li:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.ratenum .active {
+    color: var(--white);
+    background-color: var(--light-grey);
+}
+
+.rating button {
+    color: var(--white);
+    background-color: var(--orange);
+    margin: 10px 20px;
+    border: 0;
+    border-radius: 20px;
+    height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.rating button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+.container.thanks {}
 
 .attribution {
     font-size: 11px;
