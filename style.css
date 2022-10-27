@@ -129,6 +129,7 @@ button.rate:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
 }
 
 .container.thanks img {
@@ -163,6 +164,18 @@ button.rate:hover {
     margin: 0 30px;
 }
 
+i {
+    color: var(--lighter-dark-blue);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+i:hover {
+    color: var(--orange);
+}
 
 .attribution {
     font-size: 11px;
