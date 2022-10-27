@@ -28,8 +28,6 @@ body {
     height: 100vh;
 }
 
-
-
 .container {
     width: 350px;
     height: 390px;
@@ -39,10 +37,15 @@ body {
     flex-wrap: nowrap;
     border-radius: 10px;
     background-color: var(--dark-blue);
+    position: absolute;
+}
+
+.actived {
+    z-index: 99;
 }
 
 .rating {
-    display: none;
+    z-index: 1;
 }
 
 .rating .star {
@@ -71,42 +74,39 @@ body {
     line-height: 22px;
 }
 
-.ratenum {
-    margin: 20px 20px;
-}
-
-.ratenum ul {
+ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-}
-
-.ratenum ul li {
-    display: block;
     list-style: none;
-    line-height: 40px;
-    text-align: center;
-    background-color: var(--lighter-dark-blue);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: var(--light-grey);
-    cursor: pointer;
-    transition: .4s;
+    margin: 0 25px;
 }
 
-.ratenum ul li:hover {
+ul li button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    color: var(--white);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: var(--lighter-dark-blue);
+    cursor: pointer;
+    transition: .3s;
+}
+
+button.rate:hover {
     background-color: var(--orange);
     color: var(--white);
 }
 
-.ratenum .active {
+.rate:focus {
     color: var(--white);
     background-color: var(--light-grey);
 }
 
-.rating button {
+
+.rating .button {
     color: var(--white);
     background-color: var(--orange);
     margin: 10px 20px;
@@ -119,12 +119,50 @@ body {
     transition: .4s;
 }
 
-.rating button:hover {
+.rating .button:hover {
     background-color: var(--white);
     color: var(--orange);
 }
 
-.container.thanks {}
+.container.thanks {
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container.thanks img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.thanks .selected {
+    color: var(--orange);
+    background-color: var(--lighter-dark-blue);
+    margin: 10px 10px;
+    padding: 0 15px;
+    height: 30px;
+    max-width: 200px;
+    line-height: 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.thanks .thank {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.thanks .description {
+    color: var(--medium-grey);
+    font-size: 12px;
+    text-align: center;
+    margin: 0 30px;
+}
+
 
 .attribution {
     font-size: 11px;
